@@ -105,6 +105,7 @@ body {
   /* font-family: "Montserrat", sans-serif;
   font-family: "Oswald", sans-serif; */
   font-family: var(--font-family-montserrat);
+  background-color: rgba(245, 245, 245, 1);
 }
 ol,
 ul {
@@ -138,4 +139,64 @@ table {
 .premium p {
   font-size: 20px;
   font-weight: 100;
+}
+
+.boxdetails {
+  box-shadow: 3px 10px 20px #0000000f;
+  background-color: white;
+}
+
+.borderrights {
+  text-align: center;
+}
+
+#keyhighlights {
+  text-align: center;
+}
+
+#keyhighlights h2 {
+  color: rgba(20, 52, 255, 1);
+  font-weight: bold;
+  font-size: 24px;
+}
+.card {
+  box-shadow: 3px 6px 19px #00000014;
+}
+
+#certificate {
+  background-color: rgba(0, 93, 255, 1);
+}
+
+#faq h3 {
+  color: rgba(20, 52, 255, 1);
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.accordion:hover {
+  background-color: #ccc;
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+}
+
+footer {
+  background-color: rgba(34, 34, 34, 1);
 }
