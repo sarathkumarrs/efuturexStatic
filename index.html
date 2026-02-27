@@ -1,867 +1,1300 @@
 <!DOCTYPE html>
-<html lang="en" dir="">
+<html lang="en">
 <head>
-  <!-- Required Meta Tags Always Come First -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Efuturex Technologies – We Enjoy Building Incredible Things</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #3b69b5;
+    --dark: #111111;
+    --dark2: #181818;
+    --dark3: #1e1e1e;
+    --white: #ffffff;
+    --grey: #aaaaaa;
+    --card-border: rgba(255,255,255,0.07);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Barlow', sans-serif;
+    background: var(--dark);
+    color: var(--white);
+    overflow-x: hidden;
+  }
 
-  <!-- Title -->
-  <title>EFUTUREX - The Pathway to your future</title>
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: rgba(10,10,10,0.97);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 5vw;
+    height: 68px;
+  }
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--white);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+  .nav-logo svg { width: 34px; height: 34px; }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2.2rem;
+    list-style: none;
+  }
+  .nav-links a {
+    text-decoration: none;
+    color: var(--white);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.85;
+    transition: opacity .2s;
+    position: relative;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px; left: 0;
+    width: 0; height: 2px;
+    background: #3b69b5;
+    transition: width .25s;
+  }
+  .nav-links a:hover { opacity: 1; }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-cta {
+    background: #3b69b5;
+    color: #fff !important;
+    font-weight: 700 !important;
+    padding: 9px 20px !important;
+    border-radius: 50px !important;
+    opacity: 1 !important;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .nav-cta::after { display: none !important; }
+  .nav-cta:hover { background: #66a2cb !important; }
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 6px;
+  }
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--white);
+    transition: all .3s;
+  }
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 68px; left: 0; right: 0;
+    background: rgba(10,10,10,0.99);
+    padding: 2rem 5vw;
+    z-index: 999;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    text-decoration: none;
+    color: var(--white);
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .mobile-menu .nav-cta {
+    display: inline-flex;
+    width: fit-content;
+    color: #fff !important;
+    background: #3b69b5;
+    padding: 10px 24px !important;
+  }
 
-  <!-- Favicon -->
-  <link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicon/apple-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="assets/img/favicon/apple-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="assets/img/favicon/apple-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicon/apple-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="assets/img/favicon/apple-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="assets/img/favicon/apple-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="assets/img/favicon/apple-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="assets/img/favicon/apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192"  href="assets/img/favicon/android-icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
-  <link rel="manifest" href="/manifest.json">
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-TileImage" content="assets/img/favicon/ms-icon-144x144.png">
-  <meta name="theme-color" content="#ffffff">
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 100px 5vw 0;
+    overflow: hidden;
+  }
+  .hero-inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  padding: 0 5vw;
+}
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #0a0e1a 0%, #0d1428 40%, #000 100%);
+    z-index: 0;
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 30%, rgba(0,0,0,0.2) 100%);
+    z-index: 1;
+  }
+  /* Animated grid lines */
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image:
+      linear-gradient(rgba(59,105,181,0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(59,105,181,0.08) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: gridMove 20s linear infinite;
+  }
+  @keyframes gridMove {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(60px); }
+  }
+  /* Glowing blobs */
+  .blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.25;
+    z-index: 0;
+  }
+  .blob-1 { width: 500px; height: 500px; background: #3b69b5; top: -100px; right: -100px; animation: blobPulse 8s ease-in-out infinite; }
+  .blob-2 { width: 400px; height: 400px; background: #66a2cb; bottom: -100px; left: -100px; animation: blobPulse 10s ease-in-out infinite reverse; }
+  @keyframes blobPulse {
+    0%, 100% { transform: scale(1); opacity: 0.25; }
+    50% { transform: scale(1.15); opacity: 0.35; }
+  }
+  .hero-content {
+    flex: 1;
+    max-width: 580px;
+  }
+  .hero-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(59,105,181,0.12);
+    border: 1px solid rgba(59,105,181,0.35);
+    color: #66a2cb;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 50px;
+    margin-bottom: 1.2rem;
+    animation: fadeUp 0.8s ease both;
+  }
+  .hero-label span { width: 6px; height: 6px; border-radius: 50%; background: #66a2cb; display: block; animation: blink 1.5s ease-in-out infinite; }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+  .hero h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(2.2rem, 8vw, 9rem);
+    font-weight: 900;
+    line-height: 0.92;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    animation: fadeUp 0.8s 0.15s ease both;
+    max-width: 900px;
+  }
+  .hero h1 em { font-style: normal; color: #66a2cb; }
+  .hero-sub {
+    margin-top: 1.5rem;
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.65);
+    max-width: 500px;
+    line-height: 1.6;
+    animation: fadeUp 0.8s 0.3s ease both;
+  }
+  .hero-btns {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2.2rem;
+    flex-wrap: wrap;
+    animation: fadeUp 0.8s 0.45s ease both;
+  }
+  .btn-primary {
+    background: #3b69b5;
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 14px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background .2s, transform .2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .btn-primary:hover { background: #66a2cb; color: #fff; transform: translateY(-2px); }
+  .btn-secondary {
+    border: 1.5px solid rgba(255,255,255,0.25);
+    color: var(--white);
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 14px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: border-color .2s, transform .2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .btn-secondary:hover { border-color: #3b69b5; transform: translateY(-2px); }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
+  /* ── TICKER ── */
+  .ticker-wrap {
+    background: #3b69b5;
+    overflow: hidden;
+    padding: 11px 0;
+    position: relative;
+    z-index: 5;
+  }
+  .ticker-track {
+    display: flex;
+    width: max-content;
+    animation: ticker 30s linear infinite;
+  }
+  .ticker-track:hover { animation-play-state: paused; }
+  .ticker-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 2rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #fff;
+    white-space: nowrap;
+  }
+  .ticker-item::after { content: '✦'; opacity: 0.5; }
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
 
-  <!-- CSS Implementing Plugins -->
-  <link rel="stylesheet" href="assets/css/vendor.min.css">
-  <link rel="stylesheet" href="assets/vendor/bootstrap-icons/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="assets/vendor/aos/dist/aos.css">
+  /* ── STATS ── */
+  .stats-section {
+    background: #fff;
+    padding: 5rem 5vw;
+    text-align: center;
+  }
+  .stats-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #555;
+    margin-bottom: 2.5rem;
+  }
+  .stats-label strong { color: #3b69b5; }
+  .clients-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem 3.5rem;
+    margin-bottom: 3.5rem;
+    filter: grayscale(1) opacity(0.55);
+  }
+  .clients-logos span {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #111;
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .stat-card {
+    background: var(--dark);
+    border-radius: 14px;
+    padding: 1.5rem 1rem;
+  }
+  .stat-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #3b69b5;
+    line-height: 1;
+  }
+  .stat-desc {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.6);
+    margin-top: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+  }
 
-  <!-- CSS Front Template -->
-  <link rel="stylesheet" href="assets/css/theme.minc619.css?v=1.0">
+  /* ── ABOUT ── */
+  .about-section {
+    background: var(--dark2);
+    padding: 7rem 5vw;
+    position: relative;
+    overflow: hidden;
+  }
+  .section-heading {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .section-heading .underline-green {
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #3b69b5;
+    margin: 0.6rem auto 0;
+    border-radius: 2px;
+  }
+  .about-text {
+    max-width: 760px;
+    margin: 2rem auto 0;
+    text-align: center;
+    font-size: 1.08rem;
+    line-height: 1.78;
+    color: rgba(255,255,255,0.72);
+  }
+  .about-text strong { color: #3b69b5; }
+  .services-ticker {
+    margin-top: 3rem;
+    overflow: hidden;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    padding: 12px 0;
+  }
+  .services-ticker-track {
+    display: flex;
+    width: max-content;
+    animation: ticker 25s linear infinite;
+  }
+  .services-ticker-item {
+    white-space: nowrap;
+    padding: 0 2rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+  }
+  .services-ticker-item span { color: #3b69b5; margin-right: 0.5rem; }
+
+  /* ── SERVICES ── */
+  .services-section {
+    background: var(--dark);
+    padding: 7rem 5vw;
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 16px;
+    margin-top: 3rem;
+  }
+  .service-card {
+    background: var(--dark3);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 2rem;
+    cursor: pointer;
+    transition: border-color .25s, transform .25s, background .25s;
+    position: relative;
+    overflow: hidden;
+  }
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: #3b69b5;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .3s;
+  }
+  .service-card:hover { border-color: rgba(59,105,181,0.25); transform: translateY(-4px); background: #202020; }
+  .service-card:hover::before { transform: scaleX(1); }
+  .s-big { grid-column: span 6; }
+  .s-med { grid-column: span 4; }
+  .s-sm  { grid-column: span 3; }
+  .service-icon {
+    width: 44px; height: 44px;
+    background: rgba(59,105,181,0.12);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+    font-size: 1.2rem;
+  }
+  .service-card h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.7rem;
+    line-height: 1.2;
+  }
+  .service-card p {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.65;
+  }
+  .service-tag {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #3b69b5;
+    border: 1px solid rgba(59,105,181,0.3);
+    padding: 3px 10px;
+    border-radius: 50px;
+  }
+
+  /* ── CLIENTS ── */
+  .clients-section {
+    background: var(--dark2);
+    padding: 6rem 5vw;
+    text-align: center;
+  }
+  .clients-section .section-heading { margin-bottom: 3rem; }
+  .client-logos-dark {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem 4rem;
+    max-width: 900px;
+    margin: 0 auto 2.5rem;
+  }
+  .client-logos-dark span {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: rgba(255,255,255,0.25);
+    transition: color .2s;
+    text-transform: uppercase;
+  }
+  .client-logos-dark span:hover { color: #3b69b5; }
+  .btn-outline {
+    border: 1.5px solid #3b69b5;
+    color: #3b69b5;
+    font-weight: 700;
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 13px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background .2s, color .2s;
+    display: inline-block;
+  }
+  .btn-outline:hover { background: #3b69b5; color: #fff; }
+
+  /* ── LONDON BANNER ── */
+  .london-banner {
+    background: #3b69b5;
+    overflow: hidden;
+    padding: 13px 0;
+  }
+  .london-track {
+    display: flex;
+    width: max-content;
+    animation: ticker 20s linear infinite;
+  }
+  .london-item {
+    white-space: nowrap;
+    padding: 0 2.5rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #fff;
+  }
+  .london-item::after { content: '★'; margin-left: 2.5rem; }
+
+  /* ── TEAM SECTION ── */
+  .team-section {
+    background: var(--dark);
+    padding: 7rem 5vw;
+    text-align: center;
+  }
+  .team-highlight {
+    max-width: 700px;
+    margin: 2rem auto 0;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.3;
+    color: rgba(255,255,255,0.85);
+  }
+  .team-highlight em { font-style: normal; color: #3b69b5; }
+  .team-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 3rem auto 0;
+  }
+  .team-feat {
+    background: var(--dark3);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: left;
+  }
+  .team-feat-icon { font-size: 1.6rem; margin-bottom: 0.8rem; }
+  .team-feat h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.4rem;
+  }
+  .team-feat p { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.5; }
+
+  /* ── REVIEWS ── */
+  .reviews-section {
+    background: var(--dark2);
+    padding: 7rem 5vw;
+    position: relative;
+    overflow: hidden;
+  }
+  .reviews-bg-text {
+    position: absolute;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20vw;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.02);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    pointer-events: none;
+  }
+  .reviews-container {
+    max-width: 800px;
+    margin: 3rem auto 0;
+    position: relative;
+  }
+  .review-card {
+    background: var(--dark3);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    padding: 2.5rem;
+    position: relative;
+  }
+  .review-quote {
+    font-size: 3rem;
+    color: #3b69b5;
+    line-height: 0.7;
+    margin-bottom: 1rem;
+    font-family: Georgia, serif;
+  }
+  .review-text {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.75);
+  }
+  .review-author {
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .review-avatar {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3b69b5, #2c4281);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #fff;
+  }
+  .review-name { font-weight: 700; font-size: 1rem; }
+  .review-role { font-size: 0.78rem; color: #3b69b5; }
+  .review-stars { margin-bottom: 0.5rem; font-size: 0.85rem; color: #3b69b5; letter-spacing: 2px; }
+  .review-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .review-btn {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: #3b69b5;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background .2s, transform .2s;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+  .review-btn:hover { background: #66a2cb; transform: scale(1.08); }
+
+  /* ── CONTACT / FOOTER ── */
+  .footer-section {
+    background: var(--dark);
+    padding: 6rem 5vw 3rem;
+    border-top: 1px solid rgba(255,255,255,0.07);
+  }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+  }
+  .footer-brand-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .footer-brand-desc {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.7;
+    max-width: 300px;
+    margin-bottom: 1.5rem;
+  }
+  .footer-social {
+    display: flex;
+    gap: 0.8rem;
+  }
+  .social-icon {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.15);
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(255,255,255,0.55);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: border-color .2s, color .2s, background .2s;
+  }
+  .social-icon:hover { border-color: #3b69b5; color: #3b69b5; background: rgba(59,105,181,0.08); }
+  .footer-col h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.2rem;
+    color: #3b69b5;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 0.7rem; }
+  .footer-col ul li a {
+    text-decoration: none;
+    color: rgba(255,255,255,0.5);
+    font-size: 0.88rem;
+    transition: color .2s;
+  }
+  .footer-col ul li a:hover { color: #3b69b5; }
+  .footer-contact-item {
+    display: flex;
+    gap: 0.7rem;
+    margin-bottom: 0.9rem;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.5;
+  }
+  .footer-contact-icon { color: #3b69b5; font-size: 0.9rem; margin-top: 2px; flex-shrink: 0; }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.07);
+    padding-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.3);
+  }
+  .footer-bottom a { color: rgba(255,255,255,0.4); text-decoration: none; }
+  .footer-bottom a:hover { color: #3b69b5; }
+
+  /* ── NEWSLETTER ── */
+  .newsletter {
+    background: linear-gradient(135deg, #0d1a0d 0%, #111 100%);
+    border: 1px solid rgba(59,105,181,0.15);
+    border-radius: 20px;
+    padding: 3rem;
+    margin-bottom: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .newsletter h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+  .newsletter p { font-size: 0.88rem; color: rgba(255,255,255,0.5); }
+  .newsletter-form { display: flex; gap: 0.7rem; flex-wrap: wrap; }
+  .newsletter-form input {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 50px;
+    padding: 12px 20px;
+    color: var(--white);
+    font-size: 0.88rem;
+    font-family: 'Barlow', sans-serif;
+    width: 260px;
+    outline: none;
+    transition: border-color .2s;
+  }
+  .newsletter-form input:focus { border-color: #3b69b5; }
+  .newsletter-form input::placeholder { color: rgba(255,255,255,0.3); }
+  .newsletter-form button {
+    background: #3b69b5;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 24px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: 'Barlow', sans-serif;
+    transition: background .2s;
+  }
+  .newsletter-form button:hover { background: #66a2cb; }
+
+  /* ── WHATSAPP FLOAT ── */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    width: 52px; height: 52px;
+    background: #25d366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(59,105,181,0.4);
+    text-decoration: none;
+    transition: transform .2s, box-shadow .2s;
+  }
+  .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(59,105,181,0.55); }
+  .whatsapp-float svg { width: 24px; height: 24px; fill: #000; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .s-big { grid-column: span 12; }
+    .s-med { grid-column: span 6; }
+    .s-sm  { grid-column: span 6; }
+    .footer-top { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 600px) {
+    .s-med, .s-sm { grid-column: span 12; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .newsletter { flex-direction: column; }
+    .newsletter-form input { width: 100%; }
+    .hero-image{
+        display: none;
+    }
+  }
+
+
+</style>
 </head>
+<body>
 
-<body id="homeSection" class="position-relative">
-  <!-- ========== HEADER ========== -->
-  <header id="header" class="navbar navbar-expand-lg navbar-end navbar-absolute-top navbar-light navbar-show-hide" data-hs-header-options='{
-            "fixMoment": 1000,
-            "fixEffect": "slide"
-          }'>
-    
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+<img src="./logo.png" style="height:150px;width:auto;">
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#careers">Careers</a></li>
+    <li><a href="https://wa.me/917907017504" class="nav-cta" target="_blank" rel="noopener">Contact Us ↗</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMobile()">About</a>
+  <a href="#services" onclick="closeMobile()">Services</a>
+  <a href="#portfolio" onclick="closeMobile()">Portfolio</a>
+  <a href="#careers" onclick="closeMobile()">Careers</a>
+  <a href="#contact" class="nav-cta" onclick="closeMobile()">Contact Us ↗</a>
+</div>
 
-    <div class="container">
-      <nav class="js-mega-menu navbar-nav-wrap">
-        <!-- Default Logo -->
-        <a class="navbar-brand" href="index.html" aria-label="Front">
-          <img class="navbar-brand-logo" src="assets/img/EFUTUREX-Logo.png" alt="Logo" style="100px">
-        </a>
-        <!-- End Default Logo -->
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
 
-        <!-- Toggler -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-default">
-            <i class="bi-list"></i>
-          </span>
-          <span class="navbar-toggler-toggled">
-            <i class="bi-x"></i>
-          </span>
-        </button>
-        <!-- End Toggler -->
-
-        <!-- Collapse -->
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul id="navbarNavDropdownNav" class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" href="#homeSection">Home</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="#fratureSection">Features</a>
-            </li>
-			
-			<li class="nav-item">
-              <a class="nav-link" href="#InstructorsSection">Instructors</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="#faqSection">FAQ</a>
-            </li>
-			
-			<li class="nav-item">
-              <a class="nav-link" href="#gallerySection">Gallery</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="#contactSection">Contact</a>
-            </li>
-		  </ul>
-        </div>
-        <!-- End Collapse -->
-      </nav>
-    </div>
-  </header>
-
-  <!-- ========== END HEADER ========== -->
-
-  <!-- ========== MAIN CONTENT ========== -->
-  <main id="content" role="main" class="mb-5">
-    <!-- Hero -->
-    <div class="container position-relative content-space-t-3 content-space-t-md-4 content-space-t-lg-4">
-      <div class="row justify-content-lg-between align-items-lg-center">
-        <div class="col-md-10 col-lg-5">
-          <!-- Heading -->
-          <div class="mb-7">
-            <h1 class="display-4 mb-3">
-              Unlock your<br>
-
-              <span class="text-primary text-highlight-warning">
-                <span class="js-typedjs" data-hs-typed-options='{
-                        "strings": ["future.", "potential.", "skills."],
-                        "typeSpeed": 90,
-                        "loop": true,
-                        "backSpeed": 30,
-                        "backDelay": 2500
-                      }'></span>
-              </span>
-            </h1>
-            <p class="lead">Your gateway to a premium software engineering career</p>
-            <p class="lead">Everything you need in one programme and that is with industry experts working with you!</p>
-          </div>
-          <!-- End Title & Description -->
-
+      <div class="hero-content">
+        <!-- <div class="hero-label"><span></span> Digital Agency — Kochi · Bangalore · London</div> -->
+        <h1>We <em>Enjoy</em> Building Incredible Things</h1>
+        <p class="hero-sub">10+ creative specialists turning bold ideas into unforgettable digital experiences — strategy, design, code, and production under one roof.</p>
+        <div class="hero-btns">
           
         </div>
-        <!-- End Col -->
-
-        <div class="col-lg-6">
-          <div class="d-none d-lg-block">
-            <img class="img-fluid" src="assets/svg/illustrations/oc-growing.svg" alt="Image Description">
-          </div>
-        </div>
-        <!-- End Col -->
       </div>
-      <!-- End Row -->
+      <div class="hero-image">
+          <img src="./globe.png" alt="Hero Visual" style="width: 100%;"/>
+        </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap" aria-hidden="true">
+  <div class="ticker-track" id="ticker">
+    <div class="ticker-item">20+ Brands</div>
+    <div class="ticker-item">1000+ Projects</div>
+    <!-- <div class="ticker-item">₹300 Crores+ Revenue</div> -->
+    <div class="ticker-item">100+ Influencer Campaigns</div>
+    <div class="ticker-item">100+ Successful Launches</div>
+    <div class="ticker-item">200+ Creatives Monthly</div>
+    <div class="ticker-item">10+ In-House Specialists</div>
+    <div class="ticker-item">10+ Years of Growth</div>
+    <div class="ticker-item">7+ Google Reviews</div>
+    <div class="ticker-item">20+ Brands</div>
+    <div class="ticker-item">1000+ Projects</div>
+    <!-- <div class="ticker-item">₹300 Crores+ Revenue</div> -->
+    <div class="ticker-item">100+ Influencer Campaigns</div>
+    <div class="ticker-item">100+ Successful Launches</div>
+    <div class="ticker-item">200+ Creatives Monthly</div>
+    <div class="ticker-item">10+ In-House Specialists</div>
+    <div class="ticker-item">10+ Years of Growth</div>
+    <div class="ticker-item">7+ Google Reviews</div>
+  </div>
+</div>
+
+<!-- STATS / TRUSTED BY -->
+<!-- <section class="stats-section">
+  <p class="stats-label">Trusted by <strong>500+</strong> Global Companies</p>
+  <div class="clients-logos">
+    <span>happymarry</span>
+    <span>WonderLa</span>
+    <span>TRENDS</span>
+    <span>XYLEM Learning</span>
+    <span>Therefore I'm</span>
+    <span>OPPO</span>
+    <span>naturals</span>
+  </div>
+  <div class="stats-grid">
+    <div class="stat-card"><div class="stat-num">500+</div><div class="stat-desc">Brands Served</div></div>
+    <div class="stat-card"><div class="stat-num">1000+</div><div class="stat-desc">Projects Done</div></div>
+    <div class="stat-card"><div class="stat-num">₹300Cr+</div><div class="stat-desc">Revenue Generated</div></div>
+    <div class="stat-card"><div class="stat-num">2000+</div><div class="stat-desc">Influencer Campaigns</div></div>
+    <div class="stat-card"><div class="stat-num">40+</div><div class="stat-desc">In-House Specialists</div></div>
+    <div class="stat-card"><div class="stat-num">600+</div><div class="stat-desc">Google Reviews</div></div>
+  </div>
+</section> -->
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="section-heading">About Us<span class="underline-green"></span></div>
+  <p class="about-text">
+    Welcome to <strong>Efuturex Technologies</strong>, where ideas fly high and brands shine brighter! We're a buzzing bunch of 10+ creative pros who live and breathe all things digital. From SEO wizardry, scroll-worthy social media, jaw-dropping websites, killer ad campaigns, bold branding, cool influencer collabs, to full-blown productions, we've got it all under one roof! Need results with a dash of fun? That's our jam. Come hang out with us — let's turn your brand story into something unforgettable!
+  </p>
+  <div class="services-ticker" aria-hidden="true">
+    <div class="services-ticker-track">
+      <div class="services-ticker-item"><span>|</span> Social Media Management</div>
+      <div class="services-ticker-item"><span>|</span> GMB Optimization</div>
+      <div class="services-ticker-item"><span>|</span> Website Creation</div>
+      <div class="services-ticker-item"><span>|</span> Video Production</div>
+      <div class="services-ticker-item"><span>|</span> Performance Marketing</div>
+      <div class="services-ticker-item"><span>|</span> Business Automation</div>
+      <div class="services-ticker-item"><span>|</span> AI Powered Marketing</div>
+      <div class="services-ticker-item"><span>|</span> Social Media Management</div>
+      <div class="services-ticker-item"><span>|</span> GMB Optimization</div>
+      <div class="services-ticker-item"><span>|</span> Website Creation</div>
+      <div class="services-ticker-item"><span>|</span> Video Production</div>
+      <div class="services-ticker-item"><span>|</span> Performance Marketing</div>
+      <div class="services-ticker-item"><span>|</span> Business Automation</div>
+      <div class="services-ticker-item"><span>|</span> AI Powered Marketing</div>
     </div>
-    <!-- End Hero -->
+  </div>
+</section>
 
-    <!-- Icon Blocks -->
-    <div id="fratureSection" class="overflow-hidden">
-      <div class="container position-relative content-space-2 content-space-t-lg-3">
-        <!-- Heading -->
-        <div class="w-md-75 w-lg-50 text-center mx-md-auto mb-5 mb-md-9">
-          <span class="text-cap">Key course highlights</span>
-          <h2>Best-in-class content by leading faculty and industry experts</h2>
-        </div>
-        <!-- End Heading -->
-
-        <div class="row">
-          <div class="col-sm-6 col-md-4 mb-3 mb-md-5">
-            <!-- Icon Blocks -->
-            <div class="pe-lg-6">
-              <span class="svg-icon text-primary mb-3">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M15.6 5.59998L20.9 10.9C21.3 11.3 21.3 11.9 20.9 12.3L17.6 15.6L11.6 9.59998L15.6 5.59998ZM2.3 12.3L7.59999 17.6L11.6 13.6L5.59999 7.59998L2.3 10.9C1.9 11.3 1.9 11.9 2.3 12.3Z" fill="#035A4B" />
-                  <path opacity="0.3" d="M17.6 15.6L12.3 20.9C11.9 21.3 11.3 21.3 10.9 20.9L7.59998 17.6L13.6 11.6L17.6 15.6ZM10.9 2.3L5.59998 7.6L9.59998 11.6L15.6 5.6L12.3 2.3C11.9 1.9 11.3 1.9 10.9 2.3Z" fill="#035A4B" />
-                </svg>
-
-              </span>
-
-              <h4>Skill Enhancement</h4>
-              <p>Assessment, skills program construction and selection, implementation, and feedback/evaluation</p>
-            </div>
-            <!-- End Icon Blocks -->
-          </div>
-          <!-- End Col -->
-
-          <div class="col-sm-6 col-md-4 mb-3 mb-md-5">
-            <!-- Icon Blocks -->
-            <div class="pe-lg-6">
-              <span class="svg-icon text-primary mb-3">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path opacity="0.3" d="M12.5 22C11.9 22 11.5 21.6 11.5 21V3C11.5 2.4 11.9 2 12.5 2C13.1 2 13.5 2.4 13.5 3V21C13.5 21.6 13.1 22 12.5 22Z" fill="#035A4B" />
-                  <path d="M17.8 14.7C17.8 15.5 17.6 16.3 17.2 16.9C16.8 17.6 16.2 18.1 15.3 18.4C14.5 18.8 13.5 19 12.4 19C11.1 19 10 18.7 9.10001 18.2C8.50001 17.8 8.00001 17.4 7.60001 16.7C7.20001 16.1 7 15.5 7 14.9C7 14.6 7.09999 14.3 7.29999 14C7.49999 13.8 7.80001 13.6 8.20001 13.6C8.50001 13.6 8.69999 13.7 8.89999 13.9C9.09999 14.1 9.29999 14.4 9.39999 14.7C9.59999 15.1 9.8 15.5 10 15.8C10.2 16.1 10.5 16.3 10.8 16.5C11.2 16.7 11.6 16.8 12.2 16.8C13 16.8 13.7 16.6 14.2 16.2C14.7 15.8 15 15.3 15 14.8C15 14.4 14.9 14 14.6 13.7C14.3 13.4 14 13.2 13.5 13.1C13.1 13 12.5 12.8 11.8 12.6C10.8 12.4 9.99999 12.1 9.39999 11.8C8.69999 11.5 8.19999 11.1 7.79999 10.6C7.39999 10.1 7.20001 9.39998 7.20001 8.59998C7.20001 7.89998 7.39999 7.19998 7.79999 6.59998C8.19999 5.99998 8.80001 5.60005 9.60001 5.30005C10.4 5.00005 11.3 4.80005 12.3 4.80005C13.1 4.80005 13.8 4.89998 14.5 5.09998C15.1 5.29998 15.6 5.60002 16 5.90002C16.4 6.20002 16.7 6.6 16.9 7C17.1 7.4 17.2 7.69998 17.2 8.09998C17.2 8.39998 17.1 8.7 16.9 9C16.7 9.3 16.4 9.40002 16 9.40002C15.7 9.40002 15.4 9.29995 15.3 9.19995C15.2 9.09995 15 8.80002 14.8 8.40002C14.6 7.90002 14.3 7.49995 13.9 7.19995C13.5 6.89995 13 6.80005 12.2 6.80005C11.5 6.80005 10.9 7.00005 10.5 7.30005C10.1 7.60005 9.79999 8.00002 9.79999 8.40002C9.79999 8.70002 9.9 8.89998 10 9.09998C10.1 9.29998 10.4 9.49998 10.6 9.59998C10.8 9.69998 11.1 9.90002 11.4 9.90002C11.7 10 12.1 10.1 12.7 10.3C13.5 10.5 14.2 10.7 14.8 10.9C15.4 11.1 15.9 11.4 16.4 11.7C16.8 12 17.2 12.4 17.4 12.9C17.6 13.4 17.8 14 17.8 14.7Z" fill="#035A4B" />
-                </svg>
-
-              </span>
-
-              <h4>Become A professional</h4>
-              <p>Working and behaving in such a way that others think of them as competent, reliable and respectful</p>
-            </div>
-            <!-- End Icon Blocks -->
-          </div>
-          <!-- End Col -->
-
-          <div class="col-sm-6 col-md-4 mb-3 mb-md-5">
-            <!-- Icon Blocks -->
-            <div class="pe-lg-6">
-              <span class="svg-icon text-primary mb-3">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path opacity="0.3" d="M10.9607 12.9128H18.8607C19.4607 12.9128 19.9607 13.4128 19.8607 14.0128C19.2607 19.0128 14.4607 22.7128 9.26068 21.7128C5.66068 21.0128 2.86071 18.2128 2.16071 14.6128C1.16071 9.31284 4.96069 4.61281 9.86069 4.01281C10.4607 3.91281 10.9607 4.41281 10.9607 5.01281V12.9128V12.9128Z" fill="#035A4B" />
-                  <path d="M12.9607 10.9128V3.01281C12.9607 2.41281 13.4607 1.91281 14.0607 2.01281C16.0607 2.21281 17.8607 3.11284 19.2607 4.61284C20.6607 6.01284 21.5607 7.91285 21.8607 9.81285C21.9607 10.4129 21.4607 10.9128 20.8607 10.9128H12.9607V10.9128Z" fill="#035A4B" />
-                </svg>
-
-              </span>
-
-              <h4>Community networks</h4>
-              <p>Facilitate the sharing of information between organisations, and thereby encourage co-operation and collaboration between them</p>
-            </div>
-            <!-- End Icon Blocks -->
-          </div>
-          <!-- End Col -->
-
-          <div class="col-sm-6 col-md-4 mb-3 mb-md-5">
-            <!-- Icon Blocks -->
-            <div class="pe-lg-6">
-              <span class="svg-icon text-primary mb-3">
-                <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path opacity="0.3" d="M16 0.200012H4C1.8 0.200012 0 2.00001 0 4.20001V16.2C0 18.4 1.8 20.2 4 20.2H16C18.2 20.2 20 18.4 20 16.2V4.20001C20 2.00001 18.2 0.200012 16 0.200012ZM15 10.2C15 10.9 14.8 11.6 14.6 12.2H18V16.2C18 17.3 17.1 18.2 16 18.2H12V14.8C11.4 15.1 10.7 15.2 10 15.2C9.3 15.2 8.6 15 8 14.8V18.2H4C2.9 18.2 2 17.3 2 16.2V12.2H5.4C5.1 11.6 5 10.9 5 10.2C5 9.50001 5.2 8.80001 5.4 8.20001H2V4.20001C2 3.10001 2.9 2.20001 4 2.20001H8V5.60001C8.6 5.30001 9.3 5.20001 10 5.20001C10.7 5.20001 11.4 5.40001 12 5.60001V2.20001H16C17.1 2.20001 18 3.10001 18 4.20001V8.20001H14.6C14.8 8.80001 15 9.50001 15 10.2Z" fill="#035A4B" />
-                  <path d="M12 1.40002C15.4 2.20002 18 4.80003 18.8 8.20003H14.6C14.1 7.00003 13.2 6.10003 12 5.60003V1.40002V1.40002ZM5.40001 8.20003C5.90001 7.00003 6.80001 6.10003 8.00001 5.60003V1.40002C4.60001 2.20002 2.00001 4.80003 1.20001 8.20003H5.40001ZM14.6 12.2C14.1 13.4 13.2 14.3 12 14.8V19C15.4 18.2 18 15.6 18.8 12.2H14.6V12.2ZM8.00001 14.8C6.80001 14.3 5.90001 13.4 5.40001 12.2H1.20001C2.00001 15.6 4.60001 18.2 8.00001 19V14.8V14.8Z" fill="#035A4B" />
-                </svg>
-
-              </span>
-
-              <h4>Faster Job Opportunities</h4>
-              <p>Now that we've aligned the details, it's time to get things mapped out and organized.</p>
-            </div>
-            <!-- End Icon Blocks -->
-          </div>
-          <!-- End Col -->
-
-          <div class="col-sm-6 col-md-4 mb-3 mb-sm-0">
-            <!-- Icon Blocks -->
-            <div class="pe-lg-6">
-              <span class="svg-icon text-primary mb-3">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6 8.725C6 8.125 6.4 7.725 7 7.725H14L18 11.725V12.925L22 9.725L12.6 2.225C12.2 1.925 11.7 1.925 11.4 2.225L2 9.725L6 12.925V8.725V8.725Z" fill="#035A4B" />
-                  <path opacity="0.3" d="M22 9.72498V20.725C22 21.325 21.6 21.725 21 21.725H3C2.4 21.725 2 21.325 2 20.725V9.72498L11.4 17.225C11.8 17.525 12.3 17.525 12.6 17.225L22 9.72498ZM15 11.725H18L14 7.72498V10.725C14 11.325 14.4 11.725 15 11.725Z" fill="#035A4B" />
-                </svg>
-
-              </span>
-
-              <h4>Live Projects</h4>
-              <p>We strive to embrace and drive change in our industry which allows us to keep our clients relevant.</p>
-            </div>
-            <!-- End Icon Blocks -->
-          </div>
-          <!-- End Col -->
-
-          <div class="col-sm-6 col-md-4">
-            <!-- Icon Blocks -->
-            <div class="pe-lg-6">
-              <span class="svg-icon text-primary mb-3">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path opacity="0.3" d="M3 3V17H7V21H15V9H20V3H3Z" fill="#035A4B" />
-                  <path d="M20 22H3C2.4 22 2 21.6 2 21V3C2 2.4 2.4 2 3 2H20C20.6 2 21 2.4 21 3V21C21 21.6 20.6 22 20 22ZM19 4H4V8H19V4ZM6 18H4V20H6V18ZM6 14H4V16H6V14ZM6 10H4V12H6V10ZM10 18H8V20H10V18ZM10 14H8V16H10V14ZM10 10H8V12H10V10ZM14 18H12V20H14V18ZM14 14H12V16H14V14ZM14 10H12V12H14V10ZM19 14H17V20H19V14ZM19 10H17V12H19V10Z" fill="#035A4B" />
-                </svg>
-
-              </span>
-
-              <h4>Industry vetted curriculum</h4>
-              <p>Staying focused on industry, allows us to turn every project you complete into something you love.</p>
-            </div>
-            <!-- End Icon Blocks -->
-          </div>
-          <!-- End Col -->
-        </div>
-        <!-- End Row -->
-
-        <!-- SVG Shape -->
-        <figure class="position-absolute zi-n1" style="top: -35rem; left: 50rem; width: 62rem; height: 62rem;">
-          <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 260 260">
-            <circle fill="#e7eaf3" opacity=".7" cx="130" cy="130" r="130" />
-          </svg>
-        </figure>
-        <!-- End SVG Shape -->
-      </div>
-	  
+<!-- SERVICES -->
+<section class="services-section" id="services">
+  <div class="section-heading">Services We Offer<span class="underline-green"></span></div>
+  <div class="services-grid">
+    <div class="service-card s-big">
+      <div class="service-icon">🌐</div>
+      <h3>Website Development</h3>
+      <p>Transform your online presence with seamless web design, programming, and content creation that captivates and engages your audience.</p>
+      <span class="service-tag">Design + Dev</span>
     </div>
-    <!-- End Icon Blocks -->
-	
-	<!-- Features -->
-    <div class="overflow-hidden">
-      <div class="container content-space-2 content-space-lg-3">
-        <!-- Heading -->
-        <div class="w-md-75 w-lg-50 text-center mx-md-auto mb-5 mb-md-9">
-          <span class="text-cap">About the program</span>
-          <h2>You will be learning in detail about</h2>
-        </div>
-        <!-- End Heading -->
+    <div class="service-card s-big">
+      <div class="service-icon">🎬</div>
+      <h3>Creative Content Production</h3>
+      <p>From social media photography to ad campaigns, we craft stories that resonate and visuals that captivate your target market.</p>
+      <span class="service-tag">Content + Video</span>
+    </div>
+    <div class="service-card s-med">
+      <div class="service-icon">📱</div>
+      <h3>Social Media Marketing</h3>
+      <p>Elevate your online presence with data-driven social media, PPC, and influencer campaigns. We craft strategies that capture attention and drive results.</p>
+      <span class="service-tag">SMM + PPC</span>
+    </div>
+    <div class="service-card s-med">
+      <div class="service-icon">📷</div>
+      <h3>Photography & Videography</h3>
+      <p>Make your event unforgettable. Our team captures every moment with vivid photography and videography that tells your story with impact.</p>
+      <span class="service-tag">Photos + Film</span>
+    </div>
+    <div class="service-card s-med">
+      <div class="service-icon">🎨</div>
+      <h3>Branding & Design</h3>
+      <p>Stand out with a unique brand identity. From logos to taglines, we create visuals that leave a lasting impression and position you above competition.</p>
+      <span class="service-tag">Brand + Identity</span>
+    </div>
+    <div class="service-card s-sm">
+      <div class="service-icon">🤝</div>
+      <h3>Influencer Marketing</h3>
+      <p>Strategic campaigns leveraging influential voices to authentically promote your brand and expand your reach.</p>
+      <span class="service-tag">Influence</span>
+    </div>
+    <div class="service-card s-sm">
+      <div class="service-icon">🔍</div>
+      <h3>SEO</h3>
+      <p>Enhance your website's visibility on search engines to increase organic traffic and improve online presence.</p>
+      <span class="service-tag">SEO</span>
+    </div>
+    <div class="service-card s-sm">
+      <div class="service-icon">📊</div>
+      <h3>Performance Marketing</h3>
+      <p>A data-driven approach focused on driving direct responses and measurable, trackable results.</p>
+      <span class="service-tag">Ads + ROI</span>
+    </div>
+    <div class="service-card s-sm">
+      <div class="service-icon">📍</div>
+      <h3>Google My Business & Local SEO</h3>
+      <p>Make your business the top local choice with a fully optimized Google profile and targeted local SEO.</p>
+      <span class="service-tag">Local SEO</span>
+    </div>
+    <div class="service-card s-big">
+      <div class="service-icon">🤖</div>
+      <h3>AI Business Automation & CRM</h3>
+      <p>Streamline operations, automate workflows, and leverage AI-powered CRM solutions to scale your business efficiently and stay ahead of the curve.</p>
+      <span class="service-tag">AI + Automation</span>
+    </div>
+  </div>
+</section>
 
-        <div class="w-md-75 mx-md-auto">
-          <div class="row justify-content-lg-center align-items-md-center">
-            <div class="col-md-5 mb-7 mb-md-0">
-              <!-- List Checked -->
-              <ul class="list-checked list-checked-soft-bg-primary list-checked-lg mb-5">
-                <li class="list-checked-item">Web design - Front end</li>
-                <li class="list-checked-item">Git and Github essentials</li>
-                <li class="list-checked-item">Web App development - Backend</li>
-                <li class="list-checked-item">Containerisation & Devops</li>
-                <li class="list-checked-item">Flutter</li>
-                <li class="list-checked-item">Glimpse of AI & ML</li>
-              </ul>
-              <!-- End List Checked -->
-			</div>
-            <!-- End Col -->
+<!-- CLIENTS -->
+<!-- <section class="clients-section" id="portfolio">
+  <div class="section-heading">Clients We Have Worked With<span class="underline-green"></span></div>
+  <div class="client-logos-dark">
+    <span>HappyMarry</span>
+    <span>WonderLa</span>
+    <span>Reliance Trends</span>
+    <span>Xylem Learning</span>
+    <span>Therefore I'm</span>
+    <span>OPPO</span>
+    <span>Naturals</span>
+    <span>Malabar Gold</span>
+    <span>Lulu Mall</span>
+    <span>V-Guard</span>
+    <span>KSRTC</span>
+    <span>Kochi Metro</span>
+  </div>
+  <a href="#contact" class="btn-outline">View All Clients →</a>
+</section> -->
 
-            <div class="col-md-7 col-lg-5">
-              <div class="position-relative">
-                <!-- Card -->
-                <div class="card">
-                  <div class="card-body">
-                    <span class="svg-icon text-primary mb-4">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path opacity="0.3" d="M22.0318 8.59998C22.0318 10.4 21.4318 12.2 20.0318 13.5C18.4318 15.1 16.3318 15.7 14.2318 15.4C13.3318 15.3 12.3318 15.6 11.7318 16.3L6.93177 21.1C5.73177 22.3 3.83179 22.2 2.73179 21C1.63179 19.8 1.83177 18 2.93177 16.9L7.53178 12.3C8.23178 11.6 8.53177 10.7 8.43177 9.80005C8.13177 7.80005 8.73176 5.6 10.3318 4C11.7318 2.6 13.5318 2 15.2318 2C16.1318 2 16.6318 3.20005 15.9318 3.80005L13.0318 6.70007C12.5318 7.20007 12.4318 7.9 12.7318 8.5C13.3318 9.7 14.2318 10.6001 15.4318 11.2001C16.0318 11.5001 16.7318 11.3 17.2318 10.9L20.1318 8C20.8318 7.2 22.0318 7.59998 22.0318 8.59998Z" fill="#035A4B" />
-                        <path d="M4.23179 19.7C3.83179 19.3 3.83179 18.7 4.23179 18.3L9.73179 12.8C10.1318 12.4 10.7318 12.4 11.1318 12.8C11.5318 13.2 11.5318 13.8 11.1318 14.2L5.63179 19.7C5.23179 20.1 4.53179 20.1 4.23179 19.7Z" fill="#035A4B" />
-                      </svg>
+<!-- LONDON BANNER -->
+<div class="london-banner" aria-hidden="true">
+  <div class="london-track">
+    <div class="london-item">We Are Now Also in Canada</div>
+    <div class="london-item">We Are Now Also in Canada</div>
+    <div class="london-item">We Are Now Also in Canada</div>
+    <div class="london-item">We Are Now Also in Canada</div>
+    <div class="london-item">We Are Now Also in Canada</div>
+    <div class="london-item">We Are Now Also in Canada</div>
+    <div class="london-item">We Are Now Also in Canada</div>
+    <div class="london-item">We Are Now Also in Canada</div>
+  </div>
+</div>
 
-                    </span>
+<!-- TEAM SECTION -->
+<section class="team-section">
+  <div class="section-heading">You'll Be Getting Not Just A<br>Social Media Manager<span class="underline-green"></span></div>
+  <p class="team-highlight">But A <em>Dedicated Team</em> Working For Your Brand's Success</p>
+  <div class="team-features">
+    <div class="team-feat">
+      <div class="team-feat-icon">🎯</div>
+      <h4>Strategy Lead</h4>
+      <p>A dedicated strategist who understands your goals and crafts data-backed plans.</p>
+    </div>
+    <div class="team-feat">
+      <div class="team-feat-icon">✍️</div>
+      <h4>Content Creator</h4>
+      <p>Writers and designers producing scroll-stopping content for every platform.</p>
+    </div>
+    <div class="team-feat">
+      <div class="team-feat-icon">📈</div>
+      <h4>Growth Analyst</h4>
+      <p>Numbers-obsessed analyst tracking performance and optimizing for maximum ROI.</p>
+    </div>
+    <div class="team-feat">
+      <div class="team-feat-icon">🎥</div>
+      <h4>Production Crew</h4>
+      <p>Full in-house video and photography team for stunning visual content.</p>
+    </div>
+  </div>
+</section>
 
-                    <h3 class="card-title">Tackle the challenges</h3>
-                    <p class="card-text">Besides working with live projects , we have built enterprise products for common pain points that we have encountered in various products and projects.</p>
-                  </div>
-                </div>
-                <!-- End Card -->
-
-                <!-- SVG Shape -->
-                <figure class="position-absolute bottom-0 end-0 zi-n1 mb-n7 me-n7" style="width: 12rem;">
-                  <img class="img-fluid" src="./assets/svg/components/dots-lg.svg" alt="Image Description">
-                </figure>
-                <!-- End SVG Shape -->
-              </div>
-            </div>
-            <!-- End Col -->
+<!-- REVIEWS -->
+<section class="reviews-section">
+  <div class="reviews-bg-text" aria-hidden="true">REVIEWS</div>
+  <div class="section-heading">Client Reviews<span class="underline-green"></span></div>
+  <div class="reviews-container">
+    <div class="review-card" id="reviewCard">
+      <div class="review-stars">★★★★★</div>
+      <div class="review-quote">"</div>
+      <p class="review-text" id="reviewText">Working with Efuturex Digital's team in Kollam has been a game-changer. Their strategic approach to digital marketing completely revitalized our online presence, leading to a significant increase in customer engagement and leads. They are professional, insightful, and delivered results beyond our expectations.</p>
+      <div class="review-author">
+        <div class="review-avatar" id="reviewAvatar">SA</div>
+        <div>
+          <div class="review-name" id="reviewName">Anupama</div>
+          <div class="review-role" id="reviewRole">Founder - Akkulam Green Valley
           </div>
-          <!-- End Row -->
         </div>
-      </div>
-    </div>
-    <!-- End Features -->
-	
-	<!-- Clients -->
-    <div class="container content-space-2 content-space-b-lg-3">
-      <!-- Heading -->
-      <div class="w-md-75 w-lg-50 text-center mx-md-auto mb-6">
-        <h3>Programming Languages and tools covered</h3>
-      </div>
-      <!-- End Heading -->
-
-      <div class="row justify-content-center text-center">
-        <div class="col-4 col-sm-3 col-md-2 py-3">
-          <img class="avatar avatar-lg avatar-4x3 avatar-centered" src="assets/svg/programming/icons8-html-5.svg" alt="Logo">
-        </div>
-        <!-- End Col -->
-
-        <div class="col-4 col-sm-3 col-md-2 py-3">
-          <img class="avatar avatar-lg avatar-4x3 avatar-centered" src="assets/svg/programming/icons8-css3.svg" alt="Logo">
-        </div>
-        <!-- End Col -->
-
-        <div class="col-4 col-sm-3 col-md-2 py-3">
-          <img class="avatar avatar-lg avatar-4x3 avatar-centered" src="assets/svg/programming/icons8-javascript.svg" alt="Logo">
-        </div>
-        <!-- End Col -->
-
-        <div class="col-4 col-sm-3 col-md-2 py-3">
-          <img class="avatar avatar-lg avatar-4x3 avatar-centered" src="assets/svg/programming/bootstrap-logo.svg" alt="Logo">
-        </div>
-        <!-- End Col -->
-
-        <div class="col-4 col-sm-3 col-md-2 py-3">
-          <img class="avatar avatar-lg avatar-4x3 avatar-centered" src="assets/svg/programming/282806_jquery_logo_icon.svg" alt="Logo">
-        </div>
-        <!-- End Col -->
-
-        <div class="col-4 col-sm-3 col-md-2 py-3">
-          <img class="avatar avatar-lg avatar-4x3 avatar-centered" src="assets/svg/programming/react-js.svg" alt="Logo">
-        </div>
-        <!-- End Col -->
-
-        <div class="col-4 col-sm-3 col-md-2 py-3">
-          <img class="avatar avatar-lg avatar-4x3 avatar-centered" src="assets/svg/programming/icons8-python.svg" alt="Logo">
-        </div>
-        <!-- End Col -->
-
-        <div class="col-4 col-sm-3 col-md-2 py-3">
-          <img class="avatar avatar-lg avatar-4x3 avatar-centered" src="assets/svg/programming/icons8-django.svg" alt="Logo">
-        </div>
-        <!-- End Col -->
-
-        
-      </div>
-      <!-- End Row -->
-    </div>
-    <!-- End Clients -->
-	
-	<!-- Devices -->
-    <div class="container">
-      <div class="w-75 mx-auto mb-7">
-        <img class="img-fluid" src="assets/svg/components/three-pointers.svg" alt="SVG Arrow">
-      </div>
-
-       <!-- CTA -->
-		<div class="bg-light rounded-2 p-3" style="background-image: url(./assets/svg/components/wave-pattern-light.svg);">
-		  <div class="container content-space-2">
-			<div class="row justify-content-lg-between align-items-lg-center">
-			  <div class="col-md mb-5 mb-md-0">
-				<h3 class="text-black mb-0">Best-in-class content by leading faculty and industry experts.</h3>
-			  </div>
-			  <!-- End Col -->
-
-			  <div class="col-md-auto">
-				<div class="d-grid d-sm-flex gap-3">
-				  <a class="btn btn-primary btn-transition" href="assets/downloads/FullStack+Mobileapplication+DEvops+Aiml-EFUTUREX.pdf">Download Syllabus</a>
-				  <a class="btn btn-primary btn-transition" href="https://forms.gle/uPL4SpnDMXbJZ1Gj8">Join the course</a>
-				</div>
-			  </div>
-			  <!-- End Col -->
-			</div>
-			<!-- End Row -->
-		  </div>
-		</div>
-		<!-- End CTA -->
-	</div>
-    <!-- End Devices -->
-
-    
-	<!-- Features -->
-    <div id="InstructorsSection" class="position-relative rounded-2 mx-3 mx-lg-10">
-      <div class="container content-space-2 content-space-lg-3">
-        <!-- Heading -->
-        <div class="w-md-75 w-lg-50 text-center mx-md-auto mb-5">
-          <h2>Our Instructors</h2>
-          <p>The powerful and flexible Instructors for all kinds of solutions</p>
-        </div>
-        <!-- End Heading -->
-		
-		<!-- Testimonials -->
-		<div class="overflow-hidden">
-		  <div class="container content-space-b-2">
-			<div class="row justify-content-lg-center align-items-md-center">
-			  <div class="col-md-5 mb-10 mb-md-0">
-				<div class="position-relative">
-				  <img class="img-fluid rounded-2" src="./assets/img/sarathkumar.jpeg" alt="Image Description">
-
-				  <!-- SVG Shape -->
-				  <div class="position-absolute bottom-0 start-0 zi-n1 mb-n7 ms-n7" style="width: 12rem;">
-					<img class="img-fluid" src="./assets/svg/components/dots-lg.svg" alt="Image Description">
-				  </div>
-				  <!-- End SVG Shape -->
-				</div>
-			  </div>
-			  <!-- End Col -->
-
-			  <div class="col-md-6 col-lg-5">
-				<div class="ps-md-6">
-				  <!-- Blockquote -->
-				  <figure>
-					<blockquote class="blockquote blockquote-lg" style="font-size: 1.50rem; !important">Trained 100+ students in various domains and he is currently a part of VC funded start-up in Bahrain. His vision is to teach the untapped and underutilized talent in Kerala in their native language and make better software engineers!</blockquote>
-
-					<figcaption class="blockquote-footer">
-					  Sarath Kumar R S
-					  <span class="blockquote-footer-source">CTO | EFUTUREX</span>
-					</figcaption>
-				  </figure>
-				  <!-- End Blockquote -->
-				</div>
-			  </div>
-			  <!-- End Col -->
-			</div>
-			<!-- End Row -->
-		  </div>
-		</div>
-		<!-- End Testimonials -->
-		
-		
-		<!-- Testimonials -->
-		<div class="overflow-hidden">
-		  <div class="container content-space-b-2">
-			<div class="row justify-content-lg-center align-items-md-center">
-			  <div class="col-md-6 col-lg-5">
-				<div class="ps-md-6">
-				  <!-- Blockquote -->
-				  <figure>
-					<blockquote class="blockquote blockquote-lg" style="font-size: 1.50rem; !important">Founder and CEO of an emerging start-up LARES.AI. It is an Artificial Intelligence based solutions provider founded in 2020 which focus to empower business in artificial intelligence.</blockquote>
-
-					<figcaption class="blockquote-footer">
-					  Muhammed Zakir
-					  <span class="blockquote-footer-source">CEO | Lares.ai</span>
-					</figcaption>
-				  </figure>
-				  <!-- End Blockquote -->
-				</div>
-			  </div>
-			  <!-- End Col -->
-			  
-			  <div class="col-md-5 mb-10 mb-md-0">
-				<div class="position-relative">
-				  <img class="img-fluid rounded-2" src="./assets/img/zakir.jpeg" alt="Image Description">
-
-				  <!-- SVG Shape -->
-				  <div class="position-absolute bottom-0 end-0 zi-n1 mb-n7 me-n7" style="width: 12rem;">
-					<img class="img-fluid" src="./assets/svg/components/dots-lg.svg" alt="Image Description">
-				  </div>
-				  <!-- End SVG Shape -->
-				</div>
-			  </div>
-			  <!-- End Col -->
-			</div>
-			<!-- End Row -->
-		  </div>
-		</div>
-		<!-- End Testimonials -->
       </div>
     </div>
-	
-	
-	<div id="faqSection" class="container rounded-2 mb-5">
-		<!-- Heading -->
-        <div class="w-md-75 w-lg-50 text-center mx-md-auto mb-5">
-          <h3>FREQUENTLY ASKED QUESTION</h3>
-        </div>
-        <!-- End Heading -->
-		<!-- Accordion -->
-		<div class="accordion accordion-lg" id="accordionLGExample">
-		  <div class="accordion-item">
-			<div class="accordion-header" id="accordion-lg-headingOne">
-			  <a class="accordion-button collapsed" role="button" data-bs-toggle="collapse" data-bs-target="#accordion-lg-collapseOne" aria-expanded="false" aria-controls="accordion-lg-collapseOne">
-				Who is this program for?
-			  </a>
-			</div>
-			<div id="accordion-lg-collapseOne" class="accordion-collapse collapse" aria-labelledby="accordion-lg-headingOne" data-bs-parent="#accordionLGExample">
-			  <div class="accordion-body">This program is for everyone who is interested to start their career in IT sector. There is no prerequisites for this program, everything is taught form scratch!</div>
-			</div>
-		  </div>
-		  <div class="accordion-item">
-			<div class="accordion-header" id="accordion-lg-headingTwo">
-			  <a class="accordion-button collapsed" role="button" data-bs-toggle="collapse" data-bs-target="#accordion-lg-collapseTwo" aria-expanded="false" aria-controls="accordion-lg-collapseTwo">
-				What is the minimum eligibility for joining this course?
-			  </a>
-			</div>
-			<div id="accordion-lg-collapseTwo" class="accordion-collapse collapse" aria-labelledby="accordion-lg-headingTwo" data-bs-parent="#accordionLGExample">
-			  <div class="accordion-body">There is no minimum eligibility required, but everyone should have their own laptop for attending this program.</div>
-			</div>
-		  </div>
-		  <div class="accordion-item">
-			<div class="accordion-header" id="accordion-lg-headingThree">
-			  <a class="accordion-button collapsed" role="button" data-bs-toggle="collapse" data-bs-target="#accordion-lg-collapseThree" aria-expanded="false" aria-controls="accordion-lg-collapseThree">
-				What is the Course Fee?
-			  </a>
-			</div>
-			<div id="accordion-lg-collapseThree" class="accordion-collapse collapse" aria-labelledby="accordion-lg-headingThree" data-bs-parent="#accordionLGExample">
-			  <div class="accordion-body">The course fee is 35000 INR. It is a 6 month long onsite training course. Food and accomodation is provided, but not included in the program fee.</div>
-			</div>
-		  </div>
-		  <div class="accordion-item">
-			<div class="accordion-header" id="accordion-lg-headingFour">
-			  <a class="accordion-button collapsed" role="button" data-bs-toggle="collapse" data-bs-target="#accordion-lg-collapseFour" aria-expanded="false" aria-controls="accordion-lg-collapseFour">
-				How will I learn this in 6 months if I do not have any background?
-			  </a>
-			</div>
-			<div id="accordion-lg-collapseFour" class="accordion-collapse collapse" aria-labelledby="accordion-lg-headingFour" data-bs-parent="#accordionLGExample">
-			  <div class="accordion-body">We offer on-site training program which will enhance your skills and will get your hands on live projects. This will ensure real life experience which will be an added benefit!</div>
-			</div>
-		  </div>
-		  <div class="accordion-item">
-			<div class="accordion-header" id="accordion-lg-headingFive">
-			  <a class="accordion-button collapsed" role="button" data-bs-toggle="collapse" data-bs-target="#accordion-lg-collapseFive" aria-expanded="false" aria-controls="accordion-lg-collapseFive">
-				How do I join the course?
-			  </a>
-			</div>
-			<div id="accordion-lg-collapseFive" class="accordion-collapse collapse" aria-labelledby="accordion-lg-headingFive" data-bs-parent="#accordionLGExample">
-			  <div class="accordion-body">You can simply contact us on the email id/phone number provided on the website, or by simply <a href="https://forms.gle/UAdSk6q2M8FZ1CXMA">registering here</a> </div>
-			</div>
-		  </div>
-		</div>
-		<!-- End Accordion -->
-	</div>
-	
-	<div id="gallerySection" class="container-fluid rounded-2 mb-5 bg-light">
-		<!-- Gallery -->
-		<div class="container content-space-2 content-space-lg-3">
-		  <!-- Heading -->
-		  <div class="w-lg-65 text-center mx-lg-auto mb-5 mb-md-9">
-			<h3>Gallery</h3>
-		  </div>
-		  <!-- End Heading -->
+    <div class="review-nav">
+      <button class="review-btn" onclick="prevReview()">←</button>
+      <button class="review-btn" onclick="nextReview()">→</button>
+    </div>
+  </div>
+</section>
 
-		  <div class="row gx-3 gx-lg-4">
-			<div class="col-3 align-self-end mb-4">
-			  <img class="img-fluid rounded-2" src="assets/img/efuturexClassroom.jpg" alt="Image Description">
-			</div>
-			<div class="col-3 align-self-end mb-4">
-			  <img class="img-fluid rounded-2" src="assets/img/efuturexVaranda.jpg" alt="Image Description">
-			</div>
-			<!-- End Col -->
-			
-			
-			
-			<!-- End Col -->
-		  </div>
-		  <!-- End Row -->
-		</div>
-		<!-- End Gallery -->
-	</div>
-	
-	<div class="container">
-		<!-- CTA -->
-		<div class="container content-space-b-1">
-		  <div class="text-center bg-img-start py-6" style="background: url(assets/svg/components/shape-6.svg) center no-repeat;">
-			<div class="mb-5">
-			  <h2>Find the right learning path for you career</h2>
-			  <p>Join now and match your goals to our programs.</p>
-			</div>
+<!-- FOOTER / CONTACT -->
+<footer class="footer-section" id="contact">
+  <div class="newsletter">
+    <div>
+      <h3>Stay in the Loop</h3>
+      <p>Get digital marketing tips, trends & agency updates straight to your inbox.</p>
+    </div>
+    <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+      <input type="email" placeholder="Enter your email address" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-name">
+<img src="./logo.png" style="height:150px;width:auto;">
+      </div>
+      <p class="footer-brand-desc">Where ideas fly high and brands shine brighter. 10+ creative pros delivering results with a dash of fun.</p>
+      <div class="footer-social">
+        <a class="social-icon" href="#" aria-label="Instagram">in</a>
+        <a class="social-icon" href="#" aria-label="Facebook">fb</a>
+        <a class="social-icon" href="#" aria-label="LinkedIn">li</a>
+        <a class="social-icon" href="#" aria-label="YouTube">yt</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">Social Media Marketing</a></li>
+        <li><a href="#services">SEO Services</a></li>
+        <li><a href="#services">Content Creation</a></li>
+        <li><a href="#services">Photography & Video</a></li>
+        <li><a href="#services">Branding & Design</a></li>
+        <li><a href="#services">Website Development</a></li>
+        <li><a href="#services">AI Automation</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Get In Touch</h4>
+      <div class="footer-contact-item">
+        <span class="footer-contact-icon">📞</span>
+        <span>+91 790 70 175 04</span>
+      </div>
+      <!-- <div class="footer-contact-item">
+        <span class="footer-contact-icon">✉️</span>
+        <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="137b767f7f7c53666360647a7d74777a747a67727f3d7a7d">[email&#160;protected]</a></span>
+      </div> -->
+      <div class="footer-contact-item">
+        <span class="footer-contact-icon">📍</span>
+        <span><strong style="color:#fff">Kochi:</strong><br>Paramara Road, Near Ernakulam Town Hall, Kacheripady, Kerala 682018</span>
+      </div>
+      <div class="footer-contact-item">
+        <span class="footer-contact-icon">📍</span>
+        <span><strong style="color:#fff">Bangalore:</strong><br>WeWork, Prestige Central, 36, Infantry Rd, Bengaluru 560001</span>
+      </div>
+      <!-- <div class="footer-contact-item">
+        <span class="footer-contact-icon">📍</span>
+        <span><strong style="color:#fff">London:</strong><br>71–75 Shelton St, London WC2H 9JQ, UK</span>
+      </div> -->
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 – All Rights Reserved. Efuturex Digital</span>
+    <span>
+      <a href="#">Privacy Policy</a> &nbsp;|&nbsp;
+      <a href="#">Terms and Conditions</a>
+    </span>
+  </div>
+</footer>
 
-			<a class="btn btn-primary btn-transition" href="https://forms.gle/uPL4SpnDMXbJZ1Gj8">Join the course</a>
-		  </div>
-		</div>
-		<!-- End CTA -->
-	</div>
-    
-	<div class="position-relative rounded-2 mx-3 mx-lg-10 container content-space-2 content-space-lg-1"></div>
-    
-  </main>
-  <!-- ========== END MAIN CONTENT ========== -->
+<!-- WhatsApp Float -->
+<a href="https://wa.me/917907017504" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+  </svg>
+</a>
 
-  <!-- ========== FOOTER ========== -->
-  <!-- ========== FOOTER ========== -->
-	<footer id="contactSection" class="bg-dark position-relative mt-5">
-	  <div class="container content-space-b-1 position-relative z-2">
-		<div class="row justify-content-lg-between mb-10">
-		  <div class="col-lg-5 content-space-t-2 content-space-t-lg-3 mb-7 mb-lg-0">
-			<!-- Heading -->
-			<div class="mb-7">
-			  <h2 class="h1 text-white">We're here to help</h2>
-			  <p class="text-white-70">Find the right solution </p>
-			</div>
-			<!-- End Heading -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // Hamburger
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  function closeMobile() { mobileMenu.classList.remove('open'); }
 
-			<div class="row">
-			  <div class="col-sm-6 mb-5">
-				<span class="icon icon-soft-light icon-circle mb-3">
-				  <i class="bi-envelope-open-fill"></i>
-				</span>
-				<h4 class="text-white mb-0">General enquiries</h4>
-				<a class="text-white-70 small" href="#">hr@efuturex.com</a>
-			  </div>
-			  <!-- End Col -->
+  // Navbar shadow on scroll
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').style.boxShadow =
+      window.scrollY > 20 ? '0 2px 24px rgba(0,0,0,0.5)' : 'none';
+  });
 
-			  <div class="col-sm-6 mb-5">
-				<span class="icon icon-soft-light icon-circle mb-3">
-				  <i class="bi-telephone-inbound-fill"></i>
-				</span>
-				<h4 class="text-white mb-0">Phone Number</h4>
-				<a class="text-white-70 small">+91 7907017504</a>
-			  </div>
-			  <!-- End Col -->
+  // Reviews
+  const reviews = [
+    {
+      text: "Working with Efuturex Digital's team in Kollam has been a game-changer. Their strategic approach to digital marketing completely revitalized our online presence, leading to a significant increase in customer engagement and leads. They are professional, insightful, and delivered results beyond our expectations.",
+      name: "Anupama", role: "Founder - Akkulam Green Valley", initials: "SA"
+    },
+    {
+      text: "The team at Efuturex Digital crafted a comprehensive branding strategy for us that truly captured our vision. Their creativity combined with data-driven thinking set them apart from every other agency we've worked with.",
+      name: "Rahul Menon", role: "Marketing Director", initials: "RM"
+    },
+    {
+      text: "From day one, Efuturex Digital demonstrated deep expertise in SEO and performance marketing. Our organic traffic grew by 3x in just 6 months. They're not just vendors — they're genuine growth partners.",
+      name: "Priya Nair", role: "Brand Manager", initials: "PN"
+    }
+  ];
+  let currentReview = 0;
+  function updateReview(idx) {
+    const r = reviews[idx];
+    const card = document.getElementById('reviewCard');
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(10px)';
+    setTimeout(() => {
+      document.getElementById('reviewText').textContent = r.text;
+      document.getElementById('reviewName').textContent = r.name;
+      document.getElementById('reviewRole').textContent = r.role;
+      document.getElementById('reviewAvatar').textContent = r.initials;
+      card.style.transition = 'opacity .35s, transform .35s';
+      card.style.opacity = '1';
+      card.style.transform = 'translateY(0)';
+    }, 200);
+  }
+  function nextReview() { currentReview = (currentReview + 1) % reviews.length; updateReview(currentReview); }
+  function prevReview() { currentReview = (currentReview - 1 + reviews.length) % reviews.length; updateReview(currentReview); }
 
-			  <div class="col-sm-6">
-				<span class="icon icon-soft-light icon-circle mb-3">
-				  <i class="bi-geo-alt-fill"></i>
-				</span>
-				<h4 class="text-white mb-0">Address</h4>
-				<a class="text-white-70 small" href="#">Efuturex Technologies<br>Building No: 966/3,4,Near CI office, Kodungallur, Thrissur, India</a>
-			  </div>
-			  <!-- End Col -->
-			</div>
-			<!-- End Row -->
-		  </div>
+  // Newsletter
+  function handleNewsletter(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button');
+    btn.textContent = '✓ Subscribed!';
+    btn.style.background = '#2c4281';
+    setTimeout(() => { btn.textContent = 'Subscribe'; btn.style.background = ''; e.target.reset(); }, 3000);
+  }
 
-		  <div class="col-lg-6 mt-lg-n10">
-			<!-- Card -->
-			<div class="card zi-2 shadow-lg rounded">
-			  <div class="card-body">
-				<div class="mb-4">
-				  <h3>Drop us a message</h3>
-				</div>
-
-				<!-- Form -->
-				<form>
-				  <div class="row gx-3">
-					<div class="col-sm-6">
-					  <!-- Form -->
-					  <div class="mb-3">
-						<label class="form-label visually-hidden" for="hireUsFormFirstName">First name</label>
-						<input type="text" class="form-control form-control-lg" name="hireUsFormNameFirstName" id="hireUsFormFirstName" placeholder="First name" aria-label="First name">
-					  </div>
-					  <!-- End Form -->
-					</div>
-					<!-- End Col -->
-
-					<div class="col-sm-6">
-					  <!-- Form -->
-					  <div class="mb-3">
-						<label class="form-label visually-hidden" for="hireUsFormLasttName">Last name</label>
-						<input type="text" class="form-control form-control-lg" name="hireUsFormNameLastName" id="hireUsFormLasttName" placeholder="Last name" aria-label="Last name">
-					  </div>
-					  <!-- End Form -->
-					</div>
-					<!-- End Col -->
-				  </div>
-				  <!-- End Row -->
-
-				  <!-- Form -->
-				  <div class="mb-3">
-					<label class="form-label visually-hidden" for="hireUsFormWorkEmail">Email address</label>
-					<input type="email" class="form-control form-control-lg" name="hireUsFormNameWorkEmail" id="hireUsFormWorkEmail" placeholder="email@site.com" aria-label="email@site.com">
-				  </div>
-				  <!-- End Form -->
-
-				  <!-- Form -->
-				  <div class="mb-3">
-					<label class="form-label visually-hidden" for="hireUsFormCompanyName">Company name <span class="form-label-secondary">(Optional)</span></label>
-					<input type="text" class="form-control form-control-lg" name="hireUsFormNameCompanyName" id="hireUsFormCompanyName" placeholder="EFUTUREX" aria-label="EFUTUREX">
-				  </div>
-				  <!-- End Form -->
-
-				  <!-- Form -->
-				  <div class="mb-3">
-					<label class="form-label visually-hidden" for="hireUsFormDetails">Details</label>
-					<textarea class="form-control form-control-lg" name="hireUsFormNameDetails" id="hireUsFormDetails" placeholder="Tell us about your project" aria-label="Tell us about your project" rows="4"></textarea>
-				  </div>
-				  <!-- End Form -->
-
-				  <!-- Check -->
-				  <div class="form-check mb-4">
-					<input type="checkbox" class="form-check-input" id="signupFormPrivacyCheck" name="signupFormPrivacyCheck" required data-msg="Please accept our Privacy Policy.">
-					<label class="form-check-label small" for="signupFormPrivacyCheck"> By submitting this form I have read and acknowledged the <a href=../page-privacy.html>Privacy Policy</a></label>
-				  </div>
-				  <!-- End Check -->
-
-				  <div class="d-grid mb-2">
-					<button type="submit" class="btn btn-primary btn-lg">Send inquiry</button>
-				  </div>
-
-				  <div class="text-center">
-					<span class="form-text">We'll get back to you in 1-2 business days.</span>
-				  </div>
-				</form>
-				<!-- End Form -->
-			  </div>
-			</div>
-			<!-- End Card -->
-		  </div>
-		</div>
-
-		<div class="text-center">
-		  <p class="text-white-70 small">© EFUTUREX. 2022 Offerpedia. All rights reserved.</p>
-		</div>
-	  </div>
-
-	  <!-- SVG Background Shape -->
-	  <div class="position-absolute bottom-0 start-0 end-0">
-		<img class="img-fluid" src="assets/svg/components/isometric-squares-light.svg" alt="Image Description">
-	  </div>
-	  <!-- End SVG Background Shape -->
-	</footer>
-	<!-- ========== END FOOTER ========== -->
-  <!-- ========== END FOOTER ========== -->
-
-  
-
-  <!-- Go To -->
-  <a class="js-go-to go-to position-fixed" href="javascript:;" style="visibility: hidden;" data-hs-go-to-options='{
-       "offsetTop": 700,
-       "position": {
-         "init": {
-           "right": "2rem"
-         },
-         "show": {
-           "bottom": "2rem"
-         },
-         "hide": {
-           "bottom": "-2rem"
-         }
-       }
-     }'>
-    <i class="bi-chevron-up"></i>
-  </a>
-  <!-- ========== END SECONDARY CONTENTS ========== -->
-
-  <!-- JS Implementing Plugins -->
-  <script src="assets/js/vendor.min.js"></script>
-  <script src="assets/vendor/aos/dist/aos.js"></script>
-
-  <!-- JS Front -->
-  <script src="assets/js/theme.min.js"></script>
-
-  <!-- JS Plugins Init. -->
-  <script>
-    (function() {
-      // INITIALIZATION OF HEADER
-      // =======================================================
-      new HSHeader('#header').init()
-
-
-      // INITIALIZATION OF MEGA MENU
-      // =======================================================
-      new HSMegaMenu('.js-mega-menu', {
-          desktop: {
-            position: 'left'
-          }
-        })
-
-
-      // INITIALIZATION OF SHOW ANIMATIONS
-      // =======================================================
-      new HSShowAnimation('.js-animation-link')
-
-
-      // INITIALIZATION OF BOOTSTRAP VALIDATION
-      // =======================================================
-      HSBsValidation.init('.js-validate', {
-        onSubmit: data => {
-          data.event.preventDefault()
-          alert('Submited')
-        }
-      })
-
-
-      // INITIALIZATION OF GO TO
-      // =======================================================
-      new HSGoTo('.js-go-to')
-
-
-      // INITIALIZATION OF AOS
-      // =======================================================
-      AOS.init({
-        duration: 650,
-        once: true
-      });
-
-
-      // INITIALIZATION OF TEXT ANIMATION (TYPING)
-      // =======================================================
-      HSCore.components.HSTyped.init('.js-typedjs')
-
-
-      // SCROLLSPY
-      // =======================================================
-      new bootstrap.ScrollSpy(document.body, {
-        target: '#navbarNavDropdownNav'
-      })
-
-      new HSScrollspy('#navbarNavDropdown', {
-        breakpoint: 'lg',
-        scrollOffset: -10
-      })
-
-
-      // INITIALIZATION OF BOOTSTRAP VALIDATION
-      // =======================================================
-      HSBsValidation.init('.js-validate', {
-        onSubmit: data => {
-          data.event.preventDefault()
-          alert('Submited')
-        }
-      })
-
-
-      // INITIALIZATION OF LEAFLET
-      // =======================================================
-      const leaflet = HSCore.components.HSLeaflet.init(document.getElementById('map'))
-
-      L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-        id: 'mapbox/light-v9'
-      }).addTo(leaflet)
-    })()
-  </script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.service-card, .stat-card, .team-feat').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity .5s ease, transform .5s ease';
+    observer.observe(el);
+  });
+</script>
 </body>
 </html>
